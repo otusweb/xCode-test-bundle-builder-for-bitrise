@@ -1,0 +1,70 @@
+title: "Build test bundle for AWS Device Farm"
+summary: Build your XCTest or XCUITest bundle to upload to AWS Device Farm
+description: |-
+  Build your XCTest or XCUITest bundle to upload to AWS Device Farm
+website: https://github.com/otusweb/xCode-test-bundle-builder-for-bitrise
+source_code_url: https://github.com/otusweb/xCode-test-bundle-builder-for-bitrise
+support_url: https://github.com/otusweb/xCode-test-bundle-builder-for-bitrise/issues
+host_os_tags:
+  - osx-10.10
+project_type_tags:
+  - ios
+type_tags:
+  - build
+  - xcode
+is_requires_admin_user: false
+is_always_run: false
+is_skippable: false
+deps:
+  check_only:
+  - name: xcode
+run_if: ""
+inputs:
+  - workdir: $BITRISE_SOURCE_DIR
+    opts:
+      title: "Working directory"
+      summary: ""
+      description: |
+        Working directory of the step.
+        You can leave it empty to don't change it.
+  - project_path: $BITRISE_PROJECT_PATH
+    opts:
+      title: "Project (or Workspace) path"
+      summary: ""
+      description: |
+        A `.xcodeproj` or `.xcworkspace` path.
+      is_required: true        
+  - scheme: $BITRISE_SCHEME
+    opts:
+      title: "Scheme name"
+      summary: ""
+      description: |
+        The Scheme to use.
+      is_required: true
+  - configuration:
+    opts:
+      title: "Configuration name"
+      summary: ""
+      description: |
+        (optional) The configuration to use. By default your Scheme
+        defines which configuration (Debug, Release, ...) should be used,
+        but you can overwrite it with this option.
+        **Make sure that the Configuration you specify actually exists
+        in your Xcode Project**. If it does not, if you have a typo
+        in the value of this input Xcode will simply use the Configuration
+        specified by the Scheme and will silently ignore this parameter!
+  - output_tool: xcpretty
+    opts:
+      title: Output tool
+      description: |-
+        If output_tool is set to xcpretty, the xcodebuild output will be prettified by xcpretty.
+        If output_tool is set to xcodebuild, the raw xcodebuild output will be printed.
+      value_options:
+      - xcpretty
+      - xcodebuild
+      is_required: true
+      is_expand: false
+outputs:
+  - TEST_BUNDLE_IPA_PATH:
+    opts:
+      title: The created .ipa file's path
