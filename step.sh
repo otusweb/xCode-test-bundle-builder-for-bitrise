@@ -95,6 +95,7 @@ is available in the \$BITRISE_XCODE_RAW_RESULT_TEXT_PATH environment variable"
 echo_info "test bundle builder config:"
 echo_details "* output_tool: $output_tool"
 echo_details "* workdir: $workdir"
+echo_details "* output_dir: $output_dir"
 echo_details "* project_path: $project_path"
 echo_details "* scheme: $scheme"
 echo_details "* configuration: $configuration"
@@ -102,6 +103,7 @@ echo_details "* configuration: $configuration"
 validate_required_input "project_path" $project_path
 validate_required_input "scheme" $scheme
 validate_required_input "output_tool" $output_tool
+validate_required_input "output_dir" $output_dir
 
 options=("xcpretty"  "xcodebuild")
 validate_required_input_with_options "output_tool" $output_tool "${options[@]}"

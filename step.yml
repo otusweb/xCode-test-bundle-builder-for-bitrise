@@ -64,6 +64,13 @@ inputs:
       - xcodebuild
       is_required: true
       is_expand: false
+  - output_dir: $BITRISE_DEPLOY_DIR
+    opts:
+      title: "Output directory path"
+      summary: ""
+      description: |
+        This directory will contain the generated .ipa and .dSYM.zip files.
+      is_required: true
 outputs:
   - TEST_BUNDLE_IPA_PATH:
     opts:
