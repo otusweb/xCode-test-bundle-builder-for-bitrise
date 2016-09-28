@@ -222,6 +222,51 @@ if [ $exit_status != 0 ] ; then
 	handle_xcodebuild_fail
 fi
 
+
+
+
+
+
+# create the Payload.ipa file
+# we don't have the config name so using *, assuming that there will be only one
+test_runner_path=$(find "build/Build/Products/"*"-iphoneos/${scheme}-Runner.app" -print -quit)
+if [ $? != 0 ] ; then
+  echo "out: $test_runner_path"
+  exit 1
+fi
+
+payload_directory="Payload"
+ipa_path=Payload.ipa
+zip_path=Payload.zip
+
+# create the payload directory
+mkdir -p "$payload_directory"
+
+if [ $? != 0 ] ; then
+  echo "out: failed to create Payload folder"
+  exit 1
+fi
+
+#copy the test runner in the payload directory
+cp -R "$test_runner_path" "$payload_directory"
+
+if [ $? != 0 ] ; then
+  echo "out: failed to copy test runner"
+  exit 1
+fi
+
+# zip the folder
+# this command is important to get right so that archive only contains relative path
+zip -r "$ipa_path" "$payload_directory"
+
+if [ $? != 0 ] ; then
+  echo "out: failed to zip payload"
+  exit 1
+fi
+
+
+
+
 # ensure ipa_path exists
 if [ ! -e "${ipa_path}" ] ; then
     echo_fail "no ipa generated at: ${ipa_path}"
