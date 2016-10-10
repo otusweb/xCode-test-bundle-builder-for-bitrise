@@ -1,4 +1,4 @@
-title: "Build xcode test runner for AWS Device Farm"
+title: "Build xcode test runner for remote testing service"
 summary: Build your XCTest or XCUITest runner to upload to remote testing service
 description: |-
   Build your XCTest or XCUITest bundle to upload to remote testing service such as AWS Device Farm, Circle Ci
