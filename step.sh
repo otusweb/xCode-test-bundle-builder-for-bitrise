@@ -4,6 +4,12 @@ THIS_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 set -e
 
+#fail if any command fails in a pipe command (https://sipb.mit.edu/doc/safe-shell/)
+set -o pipefail
+
+#exit if an undeclared variable is used (http://kvz.io/blog/2013/11/21/bash-best-practices/)
+set -o nounset
+
 #=======================================
 # Functions
 #=======================================
@@ -110,7 +116,7 @@ validate_required_input_with_options "output_tool" $output_tool "${options[@]}"
 
 # Detect Xcode major version
 xcode_major_version=""
-major_version_regex="Xcode ([0-9]).[0-9]"
+major_version_regex="Xcode ([0-9]{1,2}).[0-9]"
 out=$(xcodebuild -version)
 if [[ "${out}" =~ ${major_version_regex} ]] ; then
 	xcode_major_version="${BASH_REMATCH[1]}"
