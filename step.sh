@@ -201,10 +201,6 @@ if [ ! -z "${configuration}" ] ; then
 	archive_cmd="$archive_cmd -configuration \"${configuration}\""
 fi
 
-if [[ "${is_clean_build}" == "yes" ]] ; then
-	archive_cmd="$archive_cmd clean"
-fi
-
 archive_cmd="$archive_cmd build-for-testing -derivedDataPath ./build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO"
 
 
