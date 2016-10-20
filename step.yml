@@ -1,7 +1,7 @@
 title: "Build xcode test runner for remote testing service"
 summary: Build your XCTest or XCUITest runner to upload to remote testing service
 description: |-
-  Build your XCTest or XCUITest bundle to upload to remote testing service such as AWS Device Farm, Circle Ci
+  Build your XCTest or XCUITest bundle to upload to remote testing service such as AWS Device Farm
 website: https://github.com/otusweb/xCode-test-bundle-builder-for-bitrise
 source_code_url: https://github.com/otusweb/xCode-test-bundle-builder-for-bitrise
 support_url: https://github.com/otusweb/xCode-test-bundle-builder-for-bitrise/issues
