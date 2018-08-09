@@ -231,7 +231,7 @@ fi
 
 # create the Payload.ipa file
 # we don't have the config name so using *, assuming that there will be only one
-test_runner_path=$(find "build/Build/Products/"*"-iphoneos/${scheme}-Runner.app" -print -quit)
+test_runner_path=$(find "build/Build/Products/"*"-iphoneos/${scheme}"*"-Runner.app" -print -quit)
 if [ $? != 0 ] ; then
   echo "out: $test_runner_path"
   exit 1
