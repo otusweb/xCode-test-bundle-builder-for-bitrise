@@ -147,11 +147,13 @@
 					1CC06D591D9ABF48003DB0D9 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = K67WAM9GKV;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					1CC06D6D1D9ABF48003DB0D9 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = K67WAM9GKV;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1CC06D591D9ABF48003DB0D9;
 					};
@@ -346,7 +348,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MobDesign.step-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -359,7 +361,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MobDesign.step-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -372,7 +374,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MobDesign.step-testUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = "step test";
 			};
 			name = Debug;
@@ -386,7 +388,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MobDesign.step-testUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = "step test";
 			};
 			name = Release;
@@ -410,6 +412,7 @@
 				1CC06D791D9ABF48003DB0D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CC06D7A1D9ABF48003DB0D9 /* Build configuration list for PBXNativeTarget "step testUITests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +421,7 @@
 				1CC06D7C1D9ABF48003DB0D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
