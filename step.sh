@@ -201,7 +201,7 @@ if [ ! -z "${configuration}" ] ; then
 	archive_cmd="$archive_cmd -configuration \"${configuration}\""
 fi
 
-archive_cmd="$archive_cmd build-for-testing -derivedDataPath ./build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO"
+archive_cmd="$archive_cmd build-for-testing -derivedDataPath ./build CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO"
 
 
 
